@@ -43,8 +43,7 @@ namespace MVCCRUDApplication1.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            ViewBag.category = fProductReposity.GetAll()
-                .GroupBy(x => x.CategoryID).Select(y => y.Key).ToList();
+            ViewBag.category = fProductReposity.GetCategoryIds();
             return View();
         }
 
@@ -54,6 +53,34 @@ namespace MVCCRUDApplication1.Controllers
             fProductReposity.Create(product);
 
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            ViewBag.category = fProductReposity.GetCategoryIds();
+
+            Product result = fProductReposity.GetById(id);
+
+            return View(result);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Product product)
+        {
+            fProductReposity.Update(product);
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var result =fProductReposity.GetById(id);
+
+            fProductReposity.Delete(result);
+
+            return RedirectToAction("Index");
+
         }
 
 

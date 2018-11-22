@@ -67,5 +67,11 @@ namespace MVCCRUDApplication1.Models.Repository
                 fDb.SaveChanges();
             }
         }
+
+        public IList<int> GetCategoryIds()
+        {
+            return fDb.Products.GroupBy(x => x.CategoryID)
+                .Select(y => y.Key).ToList();
+        }
     }
 }

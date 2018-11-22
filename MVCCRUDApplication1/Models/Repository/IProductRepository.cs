@@ -18,5 +18,7 @@ namespace MVCCRUDApplication1.Models.Repository
 
         void Delete(Product product);
 
+        IList<int> GetCategoryIds();
+
     }
 }
