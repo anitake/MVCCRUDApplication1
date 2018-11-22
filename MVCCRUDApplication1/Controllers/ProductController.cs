@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using MVCCRUDApplication1.Models;
 
 namespace MVCCRUDApplication1.Controllers
 {
@@ -36,8 +37,26 @@ namespace MVCCRUDApplication1.Controllers
             {
                 fileName = "bad-grades.png";
             }
-            return File("~/ProductImages/" + fileName, "image/jpeg|png");
+            return File("~/ProductImages/" + fileName, "image/jpeg|png|gif");
         }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            ViewBag.category = fProductReposity.GetAll()
+                .GroupBy(x => x.CategoryID).Select(y => y.Key).ToList();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Product product)
+        {
+            fProductReposity.Create(product);
+
+            return RedirectToAction("Index");
+        }
+
+
 
 
     }
