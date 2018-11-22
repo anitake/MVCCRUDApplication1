@@ -1,0 +1,45 @@
+﻿@using PagedList;;
+@using PagedList.Mvc;
+@model IPagedList<MVCCRUDApplication1.Models.Product>
+@{
+    ViewBag.Title = "Product";
+}
+@section styles
+{
+    <link href="~/Content/PagedList.css" />
+}
+<h2>產品目錄</h2>
+@Html.ActionLink("新增資料", "Create", "Product", new { @class = "btn btn-primary" })
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(p => p.FirstOrDefault().ProductID)</th>
+            <th>@Html.DisplayNameFor(p => p.FirstOrDefault().ModelNumber)</th>
+            <th>@Html.DisplayNameFor(p => p.FirstOrDefault().ModelName)</th>
+            <th>@Html.DisplayNameFor(p => p.FirstOrDefault().UnitCost)</th>
+            <th>@Html.DisplayNameFor(p => p.FirstOrDefault().ProductImage)</th>
+            <th>編輯</th>
+            <th>刪除</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(p => product.ProductID)</td>
+                <td>@Html.DisplayFor(p => product.ModelNumber)</td>
+                <td>@Html.DisplayFor(p => product.ModelName)</td>
+                <td>@Html.DisplayFor(p => product.UnitCost)</td>
+                <td>
+                    <img src="@Url.Action("GetImage", "Product", new { fileName = product.ProductImage })" title="image fileName" class="img-thumbnail" ) />
+                </td>
+                <td>@Html.ActionLink("編輯", "Edit", "Product", new { id = product.ProductID }, new { @class = "btn btn-default" })</td>
+                <td>@Html.ActionLink("刪除", "Delete", "Product", new { id = product.ProductID }, new { @class = "btn btn-danger" })</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<br />
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.Classic)

@@ -24,11 +24,13 @@
                     <li>@Html.ActionLink("首頁", "Index", "Home")</li>
                     <li>@Html.ActionLink("關於", "About", "Home")</li>
                     <li>@Html.ActionLink("連絡人", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("產品資訊", "Index", "Product")</li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
+        @RenderSection("styles",false)
         @RenderBody()
         <hr />
         <footer>

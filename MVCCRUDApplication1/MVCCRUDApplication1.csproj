@@ -52,6 +52,12 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -135,6 +141,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -170,6 +177,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -184,6 +192,37 @@
       <DependentUpon>StoreModel.edmx</DependentUpon>
       <LastGenOutput>StoreModel.cs</LastGenOutput>
     </Content>
+    <Content Include="ProductImages\003.jpg" />
+    <Content Include="ProductImages\01.jpg" />
+    <Content Include="ProductImages\02.jpg" />
+    <Content Include="ProductImages\04.jpg" />
+    <Content Include="ProductImages\1-兔斯基.gif" />
+    <Content Include="ProductImages\10211621.jpg" />
+    <Content Include="ProductImages\2807713_022800098_2.jpg" />
+    <Content Include="ProductImages\2807713_171211023_2.jpg" />
+    <Content Include="ProductImages\331c50afc533f2045a4716b84e6aae24.gif" />
+    <Content Include="ProductImages\74.jpg" />
+    <Content Include="ProductImages\83.jpg" />
+    <Content Include="ProductImages\AFH00027.jpg" />
+    <Content Include="ProductImages\AFH00034.jpg" />
+    <Content Include="ProductImages\AFH00037.jpg" />
+    <Content Include="ProductImages\AFJ00190.jpg" />
+    <Content Include="ProductImages\AFV00054.jpg" />
+    <Content Include="ProductImages\AFV00057.jpg" />
+    <Content Include="ProductImages\AFV00058.jpg" />
+    <Content Include="ProductImages\AFV00059.jpg" />
+    <Content Include="ProductImages\AGB00097.jpg" />
+    <Content Include="ProductImages\AGB00098.jpg" />
+    <Content Include="ProductImages\AGB00099.jpg" />
+    <Content Include="ProductImages\AGB00104.jpg" />
+    <Content Include="ProductImages\bad-grades.png" />
+    <Content Include="ProductImages\CASIO ZR3500.gif" />
+    <Content Include="ProductImages\DGBQ1N.jpg" />
+    <Content Include="ProductImages\Totoro-7.gif" />
+    <Content Include="ProductImages\totoro-s.gif" />
+    <Content Include="ProductImages\totoro.gif" />
+    <Content Include="ProductImages\tumblr_static_totoro_walking.gif" />
+    <Content Include="ProductImages\y4Z7xj.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\StoreModel.edmx">
@@ -218,6 +257,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
